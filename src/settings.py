@@ -1,6 +1,9 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 import datetime as dt
 from enum import Enum, auto
+import json
 
 import attr
 
@@ -8,6 +11,9 @@ import attr
 class AppCategory(Enum):
     MESSENGER = auto()
     GAME = auto()
+    VIDEO = auto()
+    MUSIC = auto()
+    STUDY = auto()
     ...
 
 
@@ -40,6 +46,13 @@ class SettingPreset:
     autodetect: bool = attr.ib(default=False)
     # custom_blacklist?
     schedule: BlockSchedule = attr.ib(factory=FixedSchedule)
+
+    def to_json(self) -> str:
+        return json.dumps(self.to_dict())
+
+    @staticmethod
+    def from_json(data: str) -> SettingPreset:
+        return SettingPreset(**json.loads(data))
 
 
 # default presets:
