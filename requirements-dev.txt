@@ -1,0 +1,3 @@
+kivy[full]
+kivy_examples
+python-for-android

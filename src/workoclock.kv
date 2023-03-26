@@ -1,0 +1,51 @@
+#:kivy 2.1.0
+
+<MainMenuScreen>:
+    Label:
+        text: "[b][color=ffdc33]Work o'clock![/color][/b]"
+        markup: True
+        font_size: '24sp'
+        halign: 'center'
+        valign: 'bottom'
+        y: 0.9
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        height: 0.4
+        width: 0.3
+        Button:
+            text: 'new'
+            on_press: root.manager.current = 'new'
+        Button:
+            text: 'pick'
+            on_press: root.manager.current = 'pick'
+        Button:
+            text: 'manage'
+            on_press: root.manager.current = 'manage'
+        Button:
+            text: 'stats'
+            on_press: root.manager.current = 'stats'
+
+<NewPresetScreen>:
+    BoxLayout:
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'
+
+<PickPresetScreen>:
+    BoxLayout:
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'
+
+<ManagePresetScreen>:
+    BoxLayout:
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'
+
+<StatsScreen>:
+    BoxLayout:
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'
