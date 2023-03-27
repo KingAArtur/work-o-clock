@@ -29,8 +29,9 @@
                 size_hint_x: 0.4
             TextInput:
                 id: name_input
-                text: 'JUST-DO-IT'
+                text: ''
                 multiline: False
+                valign: 'center'
                 font_size: '20sp'
         Label:
             text: "[u][b][color=ffdc33]App categories[/color][/b][/u]"
@@ -126,7 +127,9 @@
     BoxLayout:
         orientation: 'vertical'
         spacing: 10
-        size_hint: [0.3, 0.15]
+        size_hint: [0.3, 0.2]
+        pos_hint: {'y': 0}
+
         Button:
             text: 'save'
             on_press: root.on_save()

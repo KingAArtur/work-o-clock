@@ -1,6 +1,9 @@
 #:kivy 2.1.0
 
 <PickPresetScreen>:
+    btn_dropdown: btn_dropdown.__self__
+    dropdown: dropdown.__self__
+
     BoxLayout:
         orientation: 'vertical'
         size_hint_y: 0.3
@@ -18,7 +21,7 @@
         BoxLayout:
             orientation: 'horizontal'
             spacing: 20
-            size_hint: [0.67, 0.4]
+            size_hint: [0.67, 0.3]
             Label:
                 text: "[b][color=19ff19]Name:[/color][/b]"
                 text_size: self.size
@@ -27,9 +30,14 @@
                 halign: 'right'
                 valign: 'center'
                 size_hint_x: 0.4
+            Button:
+                id: btn_dropdown
+                font_size: '20sp'
+                size_hint_x: 0.6
+                on_release: dropdown.open(self)
             DropDown:
                 id: dropdown
-                size_hint_x: 0.6
+                on_select: root.on_select(*args[1:])
 
         BoxLayout:
             orientation: 'horizontal'
@@ -49,8 +57,14 @@
                 size_hint_x: 0.15
 
     BoxLayout:
-        size_hint: [0.3, 0.1]
+        orientation: 'vertical'
+        spacing: 10
+        size_hint: [0.3, 0.2]
         pos_hint: {'y': 0}
+
+        Button:
+            text: 'save'
+            on_press: root.on_save()
         Button:
             text: 'back'
             on_press: root.manager.current = 'main'
