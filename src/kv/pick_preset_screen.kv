@@ -1,0 +1,56 @@
+#:kivy 2.1.0
+
+<PickPresetScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 0.3
+        pos_hint: {'top': 1}
+
+        Label:
+            text: "[b][color=ffdc33]Pick preset[/color][/b]"
+            text_size: self.size
+            markup: True
+            font_size: '24sp'
+            halign: 'center'
+            valign: 'center'
+            size_hint_y: 0.3
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 20
+            size_hint: [0.67, 0.4]
+            Label:
+                text: "[b][color=19ff19]Name:[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '20sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.4
+            DropDown:
+                id: dropdown
+                size_hint_x: 0.6
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint: [0.3, 0.3]
+
+            Label:
+                text: "[b][color=19ff19]Enable[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_enable
+                size_hint_x: 0.15
+
+    BoxLayout:
+        size_hint: [0.3, 0.1]
+        pos_hint: {'y': 0}
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'

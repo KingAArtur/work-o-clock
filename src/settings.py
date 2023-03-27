@@ -14,7 +14,6 @@ class AppCategory(Enum):
     VIDEO = auto()
     MUSIC = auto()
     STUDY = auto()
-    ...
 
 
 class BlockSchedule(ABC):

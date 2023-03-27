@@ -1,3 +1,6 @@
+flake8
 kivy[full]
 kivy_examples
+mypy
+pydocstyle
 python-for-android

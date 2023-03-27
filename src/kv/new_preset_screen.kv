@@ -1,0 +1,135 @@
+#:kivy 2.1.0
+
+<NewPresetScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 0.7
+        pos_hint: {'top': 1}
+
+        Label:
+            text: "[b][color=ffdc33]Create new preset[/color][/b]"
+            text_size: self.size
+            markup: True
+            font_size: '24sp'
+            halign: 'center'
+            valign: 'center'
+            size_hint_y: 0.1
+
+        BoxLayout:
+            orientation: 'horizontal'
+            spacing: 20
+            size_hint: [0.67, 0.08]
+            Label:
+                text: "[b][color=19ff19]Name:[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '20sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.4
+            TextInput:
+                id: name_input
+                text: 'JUST-DO-IT'
+                multiline: False
+                font_size: '20sp'
+        Label:
+            text: "[u][b][color=ffdc33]App categories[/color][/b][/u]"
+            text_size: self.size
+            markup: True
+            font_size: '20sp'
+            halign: 'center'
+            valign: 'center'
+            size_hint: [0.5, 0.1]
+
+        GridLayout:
+            cols: 2
+            spacing: 10
+            size_hint: [0.3, 0.3]
+
+            Label:
+                text: "[b][color=19ff19]Messengers[/color][/b]"
+                markup: True
+                text_size: self.size
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_messenger
+                size_hint_x: 0.15
+
+            Label:
+                text: "[b][color=19ff19]Games[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_game
+                size_hint_x: 0.15
+
+            Label:
+                text: "[b][color=19ff19]Video apps[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_video
+                size_hint_x: 0.15
+
+            Label:
+                text: "[b][color=19ff19]Music apps[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_music
+                size_hint_x: 0.15
+
+            Label:
+                text: "[b][color=19ff19]Study apps[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '16sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_study
+                size_hint_x: 0.15
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: [0.3, 0.2]
+            padding_top: 50
+            Label:
+                text: "[b][color=ffdc33]Enable autodetector[/color][/b]"
+                text_size: self.size
+                markup: True
+                font_size: '20sp'
+                halign: 'right'
+                valign: 'center'
+                size_hint_x: 0.85
+            CheckBox:
+                id: cb_autodetect
+                active: True
+                size_hint_x: 0.15
+
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 10
+        size_hint: [0.3, 0.15]
+        Button:
+            text: 'save'
+            on_press: root.on_save()
+        Button:
+            text: 'back'
+            on_press: root.manager.current = 'main'
