@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, FallOutTransition
+from kivy.utils import platform
 
 from screens import MainMenuScreen, ManagePresetScreen, NewPresetScreen, PickPresetScreen, StatsScreen
 
@@ -13,6 +14,12 @@ class WorkOClockApp(App):
         sm.add_widget(PickPresetScreen(name='pick'))
         sm.add_widget(ManagePresetScreen(name='manage'))
         sm.add_widget(StatsScreen(name='stats'))
+
+        if platform == 'android':
+            from android import AndroidService
+            service = AndroidService('my pong service', 'running')
+            service.start('service started')
+            self.service = service
 
         return sm
 
