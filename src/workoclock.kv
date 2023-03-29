@@ -2,7 +2,7 @@
 
 <MainMenuScreen>:
     Label:
-        text: "[b][color=ffdc33]Work o'clock![/color][/b]"
+        text: "Useless text"
         markup: True
         font_size: '24sp'
         halign: 'center'
@@ -13,6 +13,8 @@
         spacing: 10
         height: 0.4
         width: 0.3
+        Label:
+            text: app.message
         Button:
             text: 'new'
             on_press: root.manager.current = 'new'
@@ -25,6 +27,9 @@
         Button:
             text: 'stats'
             on_press: root.manager.current = 'stats'
+        Button:
+            text: 'ping'
+            on_press: app.send()
 
 <NewPresetScreen>:
     BoxLayout:
