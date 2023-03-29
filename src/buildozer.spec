@@ -54,7 +54,7 @@ requirements = python3,kivy,oscpy
 orientation = portrait
 
 # (list) List of service to declare
-services = Pong:service/main.py
+services = Pong:service/main.py:sticky
 
 #
 # OSX Specific
